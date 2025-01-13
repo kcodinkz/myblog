@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       menuItems: [
-        { name: '首页', path: '/' },
+        { name: '首页', path: '/home' },
         { name: '归档', path: '/archive' },
         { name: '分类', path: '/categories' },
         { name: '关于', path: '/about' }

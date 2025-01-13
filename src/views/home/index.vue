@@ -32,13 +32,11 @@
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>
-
     <div class="welcome-section">
       <h1>{{ t('common.welcome') }}</h1>
       <h2>{{ t('home.subtitle') }}</h2>
       <p class="intro">{{ t('home.intro') }}</p>
     </div>
-
     <div class="featured-section">
       <h3 class="section-title">{{ t('common.featured') }}</h3>
       <div class="featured-post" v-if="featuredPost">
@@ -59,7 +57,6 @@
         </div>
       </div>
     </div>
-
     <div class="latest-section">
       <h3 class="section-title">{{ t('common.latestPosts') }}</h3>
       <div class="posts-grid">
@@ -93,7 +90,6 @@ export default {
   name: 'Home',
   setup() {
     const { t } = useI18n({ useScope: 'global' })
-
     const posts = ref([
       {
         id: 1,
@@ -111,11 +107,9 @@ export default {
       }
       // 更多文章...
     ])
-
     const formatDate = (dateStr) => {
       return new Date(dateStr).toLocaleDateString('zh-CN')
     }
-
     const featuredPost = ref({
       id: 1,
       title: '春日午后，与咖啡的约会',
@@ -124,7 +118,6 @@ export default {
       category: '生活随笔',
       date: '2024-03-21'
     })
-
     const slides = ref([
       {
         image: 'https://picsum.photos/1200/400?random=1',
@@ -142,33 +135,26 @@ export default {
         description: t('home.carousel.journey.description')
       }
     ])
-    
     const currentSlide = ref(0)
     let autoplayInterval
-    
     const nextSlide = () => {
       currentSlide.value = (currentSlide.value + 1) % slides.value.length
     }
-    
     const prevSlide = () => {
       currentSlide.value = currentSlide.value === 0 
         ? slides.value.length - 1 
         : currentSlide.value - 1
     }
-    
     const setSlide = (index) => {
       currentSlide.value = index
     }
-    
     onMounted(() => {
       // 自动播放
       autoplayInterval = setInterval(nextSlide, 5000)
     })
-    
     onUnmounted(() => {
       clearInterval(autoplayInterval)
     })
-
     return {
       posts,
       formatDate,
@@ -191,7 +177,6 @@ export default {
   margin: 0 auto;
   position: relative;
 }
-
 /* 哈萨克风格装饰条纹 */
 .home::before,
 .home::after {
@@ -210,55 +195,46 @@ export default {
   pointer-events: none;
   z-index: -1;
 }
-
 .home::before {
   left: 0;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 .home::after {
   right: 0;
   border-left: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 @media (max-width: 1440px) {
   .home::before,
   .home::after {
     width: 60px;
   }
 }
-
 @media (max-width: 1200px) {
   .home::before,
   .home::after {
     width: 40px;
   }
 }
-
 @media (max-width: 768px) {
   .home::before,
   .home::after {
     display: none;
   }
 }
-
 .welcome-section {
   text-align: left;
   margin-bottom: 60px;
 }
-
 .welcome-section h1 {
   font-size: 32px;
   margin-bottom: 8px;
   font-weight: normal;
 }
-
 .welcome-section h2 {
   font-size: 24px;
   color: #888;
   font-weight: normal;
 }
-
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -266,7 +242,6 @@ export default {
   border-top: 1px solid #333;
   padding-top: 40px;
 }
-
 .post-item {
   display: flex;
   flex-direction: column;
@@ -274,11 +249,9 @@ export default {
   text-decoration: none;
   transition: opacity 0.3s;
 }
-
 .post-item:hover {
   opacity: 0.7;
 }
-
 .post-image {
   aspect-ratio: 4/3;
   overflow: hidden;

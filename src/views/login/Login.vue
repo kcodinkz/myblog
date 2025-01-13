@@ -59,7 +59,7 @@
 <script>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { userStore } from '../store/user'
+import { userStore } from '../../store/user'
 
 export default {
   name: 'Login',

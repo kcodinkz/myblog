@@ -1,24 +1,19 @@
-# myblog
+# 我的博客
 
-## Project setup
+## 项目设置
+
 ```
 pnpm install
 ```
 
-### Compiles and hot-reloads for development
+### 编译并开启热加载用于开发环境
+
 ```
-pnpm run serve
+pnpm run dev
 ```
 
-### Compiles and minifies for production
+### 编译并压缩用于生产环境
+
 ```
 pnpm run build
 ```
-
-### Lints and fixes files
-```
-pnpm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
